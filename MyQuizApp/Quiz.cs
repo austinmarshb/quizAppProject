@@ -25,6 +25,14 @@ namespace MyQuizApp
                 Console.WriteLine($"Question {questionNumber++}");
                 DisplayQuestion(question);
                 int userChoice = GetUserChoice();
+                if (question.IsCorrectAnswer(userChoice))
+                {
+                    Console.WriteLine("Correct!");
+                }
+                else
+                {
+                    Console.WriteLine($"Wrong. The correct answer was {question.Answers[question.CorrectAnswerIndex]}");
+                }
             }
         }
 
